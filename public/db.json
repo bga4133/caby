@@ -1,0 +1,25 @@
+{
+    "products":[
+        {
+            "id":1,
+            "sku":1,
+            "code":"CAP",
+            "title":"Cabify Cap",
+            "price":"5.00"
+        },
+        {
+            "id":2,
+            "sku":2,
+            "code":"TSHIRT",
+            "title":"Cabify T-Shirt",
+            "price":"20.00"
+        },
+        {
+            "id":3,
+            "sku":3,
+            "code":"MUG",
+            "title":"Cafify Coffee Mug",
+            "price":" 7.50"
+        }
+    ]
+}
