@@ -3,22 +3,25 @@
         {
             "id":1,
             "sku":1,
-            "code":"CAP",
-            "title":"Cabify Cap",
+            "code":"X7R20PX",
+            "name":"Cabify Cap",
+            "title":"Cap",
             "price":"5.00"
         },
         {
             "id":2,
             "sku":2,
-            "code":"TSHIRT",
-            "title":"Cabify T-Shirt",
+            "code":"X2G2OPZ",
+            "name":"Cabify T-Shirt",
+            "title":"T-Shirt",
             "price":"20.00"
         },
         {
             "id":3,
             "sku":3,
-            "code":"MUG",
-            "title":"Cafify Coffee Mug",
+            "code":"X3W2OPY",
+            "name":"Cafify Coffee Mug",
+            "title":"Mug",
             "price":" 7.50"
         }
     ]

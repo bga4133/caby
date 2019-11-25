@@ -10,6 +10,7 @@ class App extends Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
   }
+  // fetch method
   componentWillMount() {
     fetch("http://localhost:8000/products")
       .then(res => res.json())
@@ -19,12 +20,14 @@ class App extends Component {
           filteredProducts: data
         })
       );
+      // localStorage basket
     if (localStorage.getItem("cartItems")) {
       this.setState({
         cartItems: JSON.parse(localStorage.getItem("cartItems"))
       });
     }
   }
+  // handle add to cart method
   handleAddToCart(e, product) {
     this.setState(state => {
       const cartItems = state.cartItems;
@@ -38,10 +41,14 @@ class App extends Component {
       if (!productAlreadyInCart) {
         cartItems.push({ ...product, count: 1 });
       }
+      // if(cartItems.count>3){
+      //   cartItems=product[1]
+      // }
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return cartItems;
     });
   }
+  // remove from cart method
   handleRemoveFromCart(e, item) {
     this.setState(state => {
       const cartItems = state.cartItems.filter(elm => elm.id != item.id);
@@ -52,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div className="App">
+        {/* <div classNameName="App">
           <h1>Hola</h1>
           <Products products={this.state.filteredProducts} handleAddToCart={this.handleAddToCart} />
 
@@ -60,26 +67,28 @@ class App extends Component {
             <Basket cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart} />
           </div>
         </div>  */}
-
-        <main class="App">
-          <section class="products">
-            <h1 class="main">Shopping cart</h1>
-            <ul class="products-list tableHead">
-              <li class="products-list-title row">
-                <div class="col-product">Product details</div>
-                <div class="col-quantity">Quantity</div>
-                <div class="col-price">Price</div>
-                <div class="col-total">Total</div>
+        {/* UI */}
+        <main className="App">
+          <section className="products">
+            <h1 className="main">Shopping cart</h1>
+            <ul className="products-list tableHead">
+              <li className="products-list-title row">
+                <div className="col-product">Product details</div>
+                <div className="col-quantity">Quantity</div>
+                <div className="col-price">Price</div>
+                <div className="col-total">Total</div>
               </li>
             </ul>
-            <ul class="products-list">
+            {/* products component */}
+            <ul className="products-list">
               <Products
                 products={this.state.filteredProducts}
                 handleAddToCart={this.handleAddToCart}
               />
             </ul>
           </section>
-          <aside class="summary">
+          {/* Basket component */}
+          <aside className="summary">
             <Basket
               cartItems={this.state.cartItems}
               handleRemoveFromCart={this.handleRemoveFromCart}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class Products extends Component {
   render() {
+    // map to show the products
     const productItems = this.props.products.map(product => (
       <>
         {/* <a href={`#${product.id}`} onClick={(e)=> this.props.handleAddToCart(e, product)}>
@@ -14,38 +15,38 @@ export default class Products extends Component {
                     onClick={(e)=> this.props.handleAddToCart(e, product)}
                     >Add to cart</button>
                 </div>  */}
-
-        <li class="product row">
+        {/* UI */}
+        <li className="product row">
           <div
-            class="col-product"
+            className="col-product"
             onClick={e => this.props.handleAddToCart(e, product)}
           >
-            <figure class="product-image">
+            <figure className="product-image">
               <img src={`/products/${product.sku}.png`} alt={product.title} />
-              <div class="product-description">
+              <div className="product-description">
                 <h1>{product.title}</h1>
-                <p class="product-code">Product code X7R2OPX</p>
+                <p className="product-code">Product code {product.code}</p>
               </div>
             </figure>
           </div>
-          <div class="col-quantity">
-            {/* <button class="count" >-</button> */}
-            {/* <input type="text" class="product-quantity" value="" /> */}
+          <div className="col-quantity">
+            {/* <button className="count" >-</button> */}
+            {/* <input type="text" className="product-quantity" value="" /> */}
             <button
               onClick={e => this.props.handleAddToCart(e, product)}
-              class="count"
+              className="count"
             >
               {" "}
               +{" "}
             </button>
           </div>
-          <div class="col-price">
-            <span class="product-price">{product.price}</span>
-            <span class="product-currency currency">€</span>
+          <div className="col-price">
+            <span className="product-price">{product.price}</span>
+            <span className="product-currency currency">€</span>
           </div>
-          <div class="col-total">
-            <span class="product-price">60</span>
-            <span class="product-currency currency">€</span>
+          <div className="col-total">
+            <span className="product-price">60</span>
+            <span className="product-currency currency">€</span>
           </div>
         </li>
       </>

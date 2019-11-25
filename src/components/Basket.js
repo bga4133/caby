@@ -5,23 +5,23 @@ export default class Basket extends Component {
     const { cartItems } = this.props;
     return (
       <>
-        <h1 class="main">Order Summary</h1>
-        <ul class="summary-items wrapper border">
+        <h1 className="main">Order Summary</h1>
+        <ul className="summary-items wrapper border">
           <li>
-            <span class="summary-items-number">
+            <span className="summary-items-number">
               {cartItems.length === 0 ? (
                 "0"
               ) : (
                 <div> you have {cartItems.length}</div>
               )}
             </span>
-            <span class="summary-items-price">
+            <span className="summary-items-price">
               {cartItems.reduce((a, c) => a + c.price * c.count,0)}
-              <span class="currency">€</span>
+              <span className="currency">€</span>
             </span>
           </li>
         </ul>
-        <div class="summary-discounts wrapper-half border">
+        <div className="summary-discounts wrapper-half border">
           <h2>Discounts</h2>
           <ul>
             <li>
@@ -50,7 +50,7 @@ export default class Basket extends Component {
                         <b>{item.title}</b>x {item.count} ={" "}
                         {item.price * item.count}€
                         <button
-                          class="countRemove"
+                          className="countRemove"
                           onClick={e =>
                             this.props.handleRemoveFromCart(e, item)
                           }
@@ -63,11 +63,11 @@ export default class Basket extends Component {
                   {/* total : {cartItems.reduce((a,c) => a + c.price*c.count, 0 )} € */}
                 </div>
               </div>
-              <div class="">
+              <div className="">
                 <ul>
                   <li>
-                    <span class="summary-total-cost">Total cost</span>
-                    <span class="summary-total-price">
+                    <span className="summary-total-cost">Total cost</span>
+                    <span className="summary-total-price">
                       {cartItems.reduce((a, c) => a + c.price * c.count, 0)}€
                     </span>
                   </li>
@@ -76,7 +76,7 @@ export default class Basket extends Component {
               </div>
             </>
           )}
-          <div class="summary-total wrapper">
+          <div className="summary-total wrapper">
             <button type="submit">Checkout</button>
           </div>
         </>
