@@ -5,10 +5,12 @@ export default class Basket extends Component {
     const { cartItems } = this.props;
     return (
       <>
+        {/* UI BASKET */}
         <h1 className="main">Order Summary</h1>
         <ul className="summary-items wrapper border">
           <li>
             <span className="summary-items-number">
+              {/* total of products in Basket */}
               {cartItems.length === 0 ? (
                 "0"
               ) : (
@@ -16,7 +18,8 @@ export default class Basket extends Component {
               )}
             </span>
             <span className="summary-items-price">
-              {cartItems.reduce((a, c) => a + c.price * c.count,0)}
+              {/* total price */}
+              {cartItems.reduce((a, c) => a + c.price * c.count, 0)}
               <span className="currency">€</span>
             </span>
           </li>
@@ -39,10 +42,10 @@ export default class Basket extends Component {
           </ul>
         </div>
         <>
+        {/* order summary detail */}
           {cartItems.length > 0 && (
             <>
               <div className="marginBasket">
-                {/* {cartItems.length===0? "Basket is empty" : <div> you have {cartItems.length}</div>} */}
                 <div>
                   <ul>
                     {cartItems.map(item => (
@@ -60,9 +63,9 @@ export default class Basket extends Component {
                       </li>
                     ))}
                   </ul>
-                  {/* total : {cartItems.reduce((a,c) => a + c.price*c.count, 0 )} € */}
                 </div>
               </div>
+              {/* total price content */}
               <div className="">
                 <ul>
                   <li>
@@ -72,7 +75,6 @@ export default class Basket extends Component {
                     </span>
                   </li>
                 </ul>
-                {/* <button type="submit">Checkout</button> */}
               </div>
             </>
           )}

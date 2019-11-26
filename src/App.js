@@ -20,7 +20,7 @@ class App extends Component {
           filteredProducts: data
         })
       );
-      // localStorage basket
+    // localStorage basket
     if (localStorage.getItem("cartItems")) {
       this.setState({
         cartItems: JSON.parse(localStorage.getItem("cartItems"))
@@ -41,9 +41,9 @@ class App extends Component {
       if (!productAlreadyInCart) {
         cartItems.push({ ...product, count: 1 });
       }
-      // if(cartItems.count>3){
-      //   cartItems=product[1]
-      // }
+      if(cartItems.length > 3){
+        cartItems.reduce((a, c) => a + c.price * c.count * 0.05, 0)
+      }
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return cartItems;
     });
@@ -59,14 +59,6 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div classNameName="App">
-          <h1>Hola</h1>
-          <Products products={this.state.filteredProducts} handleAddToCart={this.handleAddToCart} />
-
-          <div>
-            <Basket cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart} />
-          </div>
-        </div>  */}
         {/* UI */}
         <main className="App">
           <section className="products">

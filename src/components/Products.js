@@ -5,16 +5,6 @@ export default class Products extends Component {
     // map to show the products
     const productItems = this.props.products.map(product => (
       <>
-        {/* <a href={`#${product.id}`} onClick={(e)=> this.props.handleAddToCart(e, product)}>
-                    <img src={`/products/${product.sku}.png`} alt={product.title}></img>
-                    <p>{product.title}</p>
-                </a>
-                <div>
-                    <p>{product.price} €</p>
-                    <button className=""
-                    onClick={(e)=> this.props.handleAddToCart(e, product)}
-                    >Add to cart</button>
-                </div>  */}
         {/* UI */}
         <li className="product row">
           <div
